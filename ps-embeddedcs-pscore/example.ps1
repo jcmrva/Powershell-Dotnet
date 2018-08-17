@@ -6,8 +6,6 @@ public class Calc
 {
     public static int RandomInt() => (new Random()).Next();
 
-    //Span<int> arr = stackalloc [] {1, 2, 3};
-
     public void WriteTuple()
     {
         var tuple = (A: "one", B: "two");
