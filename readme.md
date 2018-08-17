@@ -17,3 +17,7 @@ Minimal examples of PowerShell-.NET interaction.
 https://github.com/PowerShell/PowerShell/tree/master/docs/host-powershell
 
 
+https://www.red-gate.com/simple-talk/dotnet/net-development/using-c-to-create-powershell-cmdlets-the-basics/
+
+http://executeautomation.com/blog/calling-c-code-in-powershell-and-vice-versa/
+
