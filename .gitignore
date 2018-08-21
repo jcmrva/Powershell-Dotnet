@@ -2,6 +2,7 @@
 
 # custom #
 deploy/
+publish/
 
 ### F# ###
 lib/debug
