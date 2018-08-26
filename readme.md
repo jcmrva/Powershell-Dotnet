@@ -7,6 +7,7 @@ Minimal examples of PowerShell-.NET interaction.
 |C#   |hosted   |netcoreapp |[cs-pshosted-netcoreapp](./cs-pshosted-netcoreapp)
 |C#   |hosted   |framework  |[cs-pshosted-netframework](./cs-pshosted-netframework)
 |F#   |hosted   |netstandard|
+|PS   |lib      |netstandard|[ps-librarycs-netstandard](ps-librarycs-netstandard)
 |PS   |lib      |netstandard|[ps-libraryfs-netstandard](ps-libraryfs-netstandard)
 
 * **Hosted**: PowerShell execution is hosted in .NET via System.Management.Automation
