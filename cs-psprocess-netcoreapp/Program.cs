@@ -10,8 +10,9 @@ namespace Example
             Console.WriteLine("Base folder: " + AppContext.BaseDirectory);
 
             var pinfo = new ProcessStartInfo();
-            pinfo.FileName = "powershell.exe";
-            pinfo.Arguments = "-File example.ps1";
+            pinfo.FileName = "pwsh.exe";
+            pinfo.Arguments = "-File example.ps1 -MyParam \"Hello to PS from C# and back again.\" -Test";
+            //pinfo.WorkingDirectory = "";
             pinfo.CreateNoWindow = true;
             pinfo.UseShellExecute = false;
             pinfo.RedirectStandardOutput = true;
