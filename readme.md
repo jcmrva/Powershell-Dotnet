@@ -10,15 +10,15 @@ Reasonably minimal examples of PowerShell-.NET interaction.
 |C#      |framework  |[cs-pshosted-netframework](./cs-pshosted-netframework)
 
 
-**Process**: PowerShell files are executed via System.Diagnostics.Process
+**Process**: PowerShell files are executed via System.Diagnostics.Process. Input can be sent to PS via ProcessStartInfo.Arguments. Read from Process.StandardOutput and Process.StandardError to get results.
 
 |Language|Target     |Folder
 |:---:   |:---------:|---------
 |C#      |netcoreapp |[cs-psprocess-netcoreapp](./cs-psprocess-netcoreapp)
-|F#      |netcoreapp |[cs-psprocess-netcoreapp](./cs-psprocess-netcoreapp)
+|F#      |netcoreapp |[fs-psprocess-netcoreapp](./fs-psprocess-netcoreapp)
 
 
-**Library/Embedded**: .NET code is contained in a library referenced by PowerShell or embedded directly 
+**Library/Embedded**: .NET code is contained in a library referenced by PowerShell or embedded directly in the PS script/module.
 
 |Language|Target     |Folder
 |:---:   |:---------:|---------
