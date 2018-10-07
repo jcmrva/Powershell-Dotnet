@@ -1,6 +1,6 @@
 $cs = @"
 using System;
-using static System.Math;
+using static System.Console;
 
 public class Calc
 {
@@ -9,17 +9,32 @@ public class Calc
     public void WriteTuple()
     {
         var tuple = (A: "one", B: "two");
-        Console.WriteLine(tuple.A);
-        Console.WriteLine(tuple.B);
+        WriteLine(tuple.A);
+        WriteLine(tuple.B);
     }
 }
 "@
 
-Add-Type -TypeDefinition $cs -Language CSharp # -ReferencedAssemblies $assemblies
+if ($PSVersionTable.PSEdition -eq "Desktop") {
+    "This will fail at the Add-Type function under Windows Powershell."
+    return
+}
+else {
+    Add-Type -TypeDefinition $cs -Language CSharp # -ReferencedAssemblies $assemblies
 
-[Calc]::RandomInt()
+    [Calc]::RandomInt()
 
-$calc = New-Object Calc 
-$calc.WriteTuple()
+    $calc = New-Object Calc 
+    $calc.WriteTuple()
 
-# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-6
+    $csmethod = @"
+public static string Greet(string name) =>
+    return "Hello " + name + " from a C# method.";
+
+"@
+    
+    $greet = Add-Type -Name "GeneratedClass" -MemberDefinition $csmethod -Language CSharp -PassThru
+    $greet::Greet("PS")
+    
+    # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-6
+}

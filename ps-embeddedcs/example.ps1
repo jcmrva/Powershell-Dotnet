@@ -30,12 +30,19 @@ Add-Type -TypeDefinition $cs -Language CSharp  # -ReferencedAssemblies $assembli
 [Calc]::Add(4, 3)
 
 $calc = New-Object Calc 
-$calc.Increment(5)
-$calc.Increment()
 $calc.Increment(2)
-
 $calc.increment() # C# is case-sensitive but PS isn't.
 
+
+$csmethod = @"
+public static string Greet(string name)
+{
+    return "Hello " + name + " from a C# method.";
+}
+"@
+
+$greet = Add-Type -Name "GeneratedClass" -MemberDefinition $csmethod -Language CSharp -PassThru
+$greet::Greet("PS")
 
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-6
 # https://technet.microsoft.com/en-us/library/dd315241.aspx

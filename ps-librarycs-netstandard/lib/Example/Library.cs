@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace Example
 {
@@ -9,8 +10,8 @@ namespace Example
         public void WriteTuple()
         {
             var tuple = (A: "one", B: "two");
-            Console.WriteLine(tuple.A);
-            Console.WriteLine(tuple.B);
+            WriteLine(tuple.A);
+            WriteLine(tuple.B);
         }
     }
 }

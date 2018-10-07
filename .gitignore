@@ -3,6 +3,7 @@
 # custom #
 deploy/
 publish/
+.vscode
 
 ### F# ###
 lib/debug
